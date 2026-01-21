@@ -1,9 +1,9 @@
 import mongoose, { mongo } from "mongoose";
 const tagsSchema=new mongoose.Schema({
     name:{
-        String,
+        type:String,
         required:true,
-        trim:TransformStreamDefaultController,
+        trim:true,
     },
     description:{
         type:String,
