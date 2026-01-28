@@ -1,7 +1,7 @@
-import Tag from '../models/Tags.js';
+import Category from '../models/Category.js';
 
 // create handlere function
-export const createTag= async (req, res)=>{
+export const createCategory= async (req, res)=>{
     try{
         // fetch data
         const {name,description}=req.body;
@@ -37,19 +37,19 @@ export const createTag= async (req, res)=>{
 
 // getAlltags handler function
 
-export const showAlltags= async (req,res)=>{
+export const showAllCategory= async (req,res)=>{
     try{
-        const allTags = await Tag.find({}, {name:true, description:true});
+        const allCategory = await Category.find({}, {name:true, description:true});
         res.status(200).json({
             success:true,
-            message:"All tags returned successfully",
+            message:"All Category returned successfully",
         })
     }
     catch(error){
         console.error(error);
         return res.status(500).json({
             success:false,
-            message:"all tag reqired error in controller tag.js",
+            message:"All Category reqired error in controller Category.js",
         })
     }
 }
